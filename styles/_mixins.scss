@@ -1,0 +1,16 @@
+//  Mixins
+// @import "./variables";
+
+@mixin mediaQuery($params...) {
+  @if length($params) ==1 {
+    @media (min-width: nth($params, 1)) {
+      @content;
+    }
+  }
+
+  @if length($params) ==2 {
+    @media (min-width: nth($params, 1)) and (max-width: nth($params, 2)) {
+      @content;
+    }
+  }
+}

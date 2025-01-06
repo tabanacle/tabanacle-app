@@ -1,3 +1,55 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "generic"
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": 1,
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": [
+          "css",
+          "jsx",
+          "global"
+        ]
+      }
+    ],
+    // "arrow-body-style": [
+    //   "error",
+    //   "as needed"
+    // ],
+    "jsx-a11y/interactive-supports-focus": [
+      "error",
+      {
+        "tabbable": [
+          "button",
+          "checkbox",
+          "link",
+          "searchbox",
+          "spinbutton",
+          "switch",
+          "textbox"
+        ]
+      }
+    ]
+  }
 }

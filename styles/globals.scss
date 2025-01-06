@@ -1,0 +1,288 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @import "./variables";
+@import "./mixins";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #f9f9fa;
+  font-size: 62.5%;
+}
+
+.Toastify__toast {
+  min-height: auto !important;
+  background: black !important;
+  border-radius: 1.6rem !important;
+  color: #ffffff !important;
+  width: fit-content;
+
+  &-body {
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1.8rem;
+  }
+}
+
+.text-small {
+  @apply text-1.2 leading-1.8 font-normal;
+}
+
+.text-normal {
+  @apply text-1.4 leading-2 font-normal;
+}
+
+.date-border {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  height: 36px;
+  font-size: 0.875rem;
+  padding-left: 8px;
+  border: none;
+}
+
+.react-date-picker {
+  &__wrapper {
+    border: none !important;
+  }
+
+  &__clear-button,
+  &__calendar-button {
+    &:hover > svg > path {
+      fill: #00000066;
+    }
+  }
+
+  &__clear-button > svg,
+  &__calendar-button > svg {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    path {
+      fill: #000000cc;
+    }
+  }
+
+  &__inputGroup {
+    font-size: 1.4rem;
+  }
+
+  input {
+    width: fit-content !important;
+    background-color: transparent !important;
+    text-align: center;
+
+    &:focus {
+      background-color: transparent !important;
+      outline: none;
+    }
+  }
+}
+
+.react-datepicker__month-container {
+  border: none;
+}
+
+.calendar-style {
+  background: #fff;
+
+  .react-datepicker__week {
+    display: flex;
+  }
+
+  &.react-datepicker {
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  .react-datepicker__header {
+    border: none !important;
+    padding: 0;
+    background: transparent;
+    height: 9.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .react-datepicker__month {
+    margin: 0;
+  }
+
+  .react-datepicker__day {
+    width: 4rem;
+    height: 4rem;
+    margin: 0;
+    font-weight: 500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2rem;
+    color: #344054;
+
+    &:hover {
+      background: #eaeff7;
+    }
+
+    &--selected {
+      background: #849bd3;
+      color: #fff;
+
+      &:hover {
+        background: #849bd3;
+      }
+    }
+
+    &--in-selecting-range {
+      background: #eaeff7;
+      color: #082f8b;
+    }
+
+    &--in-range {
+      color: #fff;
+      background: #0a38a7;
+
+      &:hover {
+        background: #0a38a7;
+      }
+    }
+
+    &--disabled {
+      color: #d0d5dd;
+      cursor: not-allowed;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+}
+
+.datepicker__current {
+  // padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+  width: 100%;
+
+  .datepicker__navigation {
+    &:hover {
+      svg path {
+        stroke: #101828;
+      }
+    }
+  }
+}
+
+.datepicker__current-month {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  text-align: center;
+  color: #344054;
+}
+
+.react-datepicker__day-names {
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+
+  .react-datepicker__day-name {
+    width: 4rem;
+    height: 4rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #344054;
+  }
+}
+
+// New calendar rane picker
+.react-daterange-picker {
+  flex-direction: column;
+  width: inherit;
+
+  &__wrapper {
+    display: none !important;
+  }
+
+  &__calendar {
+    position: unset !important;
+    width: 100% !important;
+  }
+}
+
+.react-calendar {
+  border: none !important;
+
+  &__navigation {
+    gap: 0.4rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  button {
+    min-width: 4rem !important;
+    border-radius: 0.8rem;
+
+    &:hover,
+    &:focus {
+      background-color: #0000000a !important;
+    }
+
+    &:disabled {
+      background-color: transparent !important;
+      cursor: not-allowed;
+      color: #00000066;
+    }
+  }
+
+  &__month-view__weekdays {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+  }
+
+  &__tile--now {
+    background-color: black !important;
+    color: white;
+
+    &:hover,
+    &:focus {
+      color: black;
+    }
+  }
+
+  &__tile--rangeStart {
+    color: black !important;
+
+    &:focus {
+      background-color: #00000066 !important;
+    }
+  }
+}
+
+.react-calendar__month-view__days {
+  button {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+}
